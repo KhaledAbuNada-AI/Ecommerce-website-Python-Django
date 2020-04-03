@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+
+
+<link rel="stylesheet" href="{% static 'site_static/css/style_1.css' %}">
+<div class="container">
+    <div class="row mt-5">
+      <div class="col-md-12 profile">
+        {% if profile.image %}
+           <img class="profile_img" src="{{profile.image.url}} " alt="Card image cap">
+        {% else %}
+           <img class="profile_img" src="{% static 'site_static/img/user_default_image.svg' %} " alt="Card image cap">
+        {% endif %}
+      </div>
+        <!-- <img src="img/account1.svg"> -->
+        <div class="col-md-12 profile_info">
+        <h2>{{profile}}</h2>
+        <h4>{{profile.user}}</h4>
+        <h4>{{ profile.user.email }}</h4>
+        <h4>{{profile.address}}</h4>
+      </div>
+    <a href="#" class="btn-link bg-link"  >Edit My Profiel</a>
+    </div>
+</div>
+<hr>
+<div class="container mt-5">
+    <div class="row mt-5">
+      <h3 class="p-2 bg-warning">MY Orders</h3>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Order Number</th>
+                <th scope="col">Total</th>
+                <th scope="col">Type</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+              </tr>
+            </tbody>
+          </table>
+
+    </div>
+</div>
+{% endblock body %}
