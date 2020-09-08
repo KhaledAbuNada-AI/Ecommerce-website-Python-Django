@@ -5,6 +5,13 @@ from django.utils.text import slugify
 from django.urls import reverse
 # Create your models here.
 
+'''
+django models field
+1- html widget
+2- validation
+3- db size
+'''
+
 
 class Product(models.Model):
     PRODName = models.CharField(max_length=100, verbose_name=_("Product Name"))
